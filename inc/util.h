@@ -2,6 +2,7 @@
 #define UTIL_H
 
 #include <string>
+#include <random>
 #include <iostream>
 #include "game.h"
 

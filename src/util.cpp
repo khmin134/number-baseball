@@ -1,12 +1,11 @@
 #include "../inc/util.h"
 
 std::string get_answer() {
-    std::string answer;
-
-    std::cout << "Enter a answer: ";
-    std::cin >> answer;
-
-    return answer;
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<int> dist(100, 999);
+    
+    return std::to_string(dist(rng));
 }
 
 std::string get_guess() {

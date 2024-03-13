@@ -6,7 +6,8 @@
 int main() {
     std::string answer = get_answer();
 
-
+    std::cout << "Anwser is " << answer << std::endl;
+    
     while(true) {
         std::string guess = get_guess();
 
