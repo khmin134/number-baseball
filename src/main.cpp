@@ -5,10 +5,15 @@
 
 int main() {
     std::string answer = get_answer();
-
-    std::cout << "Anwser is " << answer << std::endl;
-    
+    int cnt = 5;
     while(true) {
+        if(cnt == 0) {
+            std::cout << "You lose!" << std::endl;
+            return 0;
+        }
+
+        std::cout << cnt-- << " chance left." << std::endl;
+
         std::string guess = get_guess();
 
         auto result = check_anwser(answer, guess);

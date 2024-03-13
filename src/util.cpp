@@ -1,11 +1,20 @@
 #include "../inc/util.h"
 
 std::string get_answer() {
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<int> dist(100, 999);
-    
-    return std::to_string(dist(rng));
+START:
+    while(true) {
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<int> dist(100, 999);
+
+        std::string answer = std::to_string(dist(rng));
+
+        for(size_t i = 1; i < answer.size(); i++) {
+            if(answer[0] == answer[i]) goto START;
+        }
+
+        return answer;
+    }
 }
 
 std::string get_guess() {
